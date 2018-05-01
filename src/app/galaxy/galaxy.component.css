@@ -1,0 +1,10 @@
+.header-input {
+	width: 50%;
+	margin-left: 265px;
+}
+.gallery {
+	margin: 25px;
+	border: 1px solid #ccc;
+	float: left;
+	width: 180px;
+}

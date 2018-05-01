@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import '~bootstrap/dist/css/bootstrap.min.css'; */
+body {
+	background-image: url(http://getwallpapers.com/wallpaper/full/8/1/4/29917.jpg);
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}

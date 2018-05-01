@@ -1,0 +1,22 @@
+
+<div class="container">
+  <div class="page-header">
+    <h1 class="text-white text-center"> Star War Team</h1>
+    <div class="input-group col-md-8 header-input " >
+        <input [(ngModel)]="searchText" type="text" class="form-control input-md" placeholder="search for team members..." />
+    </div>  
+  </div>
+  <div class="row" >
+      <div class="col-sm-6 col-md-3 gallery" *ngFor="let movie of moviesData | filter : searchText"  >
+        <div class="thumbnail" >
+          <a (click)="sendMeHome(movie)">
+            <img  src="{{_displayImage(movie.fileData)}}" alt="Northern Lights" style="width:100%">
+            <div class="caption">
+              <p class="text-white text-center">{{movie.name}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+  </div>
+    
+</div>

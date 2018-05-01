@@ -1,0 +1,37 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="media"  *ngFor="let favo of favourates">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object" src="https://qph.fs.quoracdn.net/main-qimg-9fbe8676c42ae0f5f6ac50f956c9e2ae-c" alt="..." style="width:30%">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading text-white">{{favo.title}}</h4>
+                {{favo.director}}
+              </div>
+            </div>
+        </div>
+      width: 37%;
+    margin-left: 70px;
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row"  >
+        <div class="col-md-8" *ngFor="let favo of favourates">
+<ul>
+
+
+  <li>
+    <img src="https://qph.fs.quoracdn.net/main-qimg-9fbe8676c42ae0f5f6ac50f956c9e2ae-c" alt="" style="width:30%">
+    <h5>{{favo.title}}</h5>
+    <p>{{favo.director}}.</p>
+    
+  </li>
+ 
+</ul>
+</div></div>
+</div>
+

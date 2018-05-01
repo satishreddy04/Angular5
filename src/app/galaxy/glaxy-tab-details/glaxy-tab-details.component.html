@@ -1,0 +1,25 @@
+<div class="container">
+    <img class="center" src="{{_displayImage(data.fileData)}}" alt="Notebook" style="width:15%;">
+    <div class="content text-center">
+      <h1 class="text-white text-center">{{data.name}}</h1>
+    </div>
+ 
+  <h2 class="text-white text-center">Acted Fillms</h2>
+  <div class="row text-center"  >
+      <div class="col-sm-6 col-md-3 gallery" *ngFor="let fims of filmslist"  >
+          <div class="column">
+              <div class="card">
+                <img src="https://qph.fs.quoracdn.net/main-qimg-9fbe8676c42ae0f5f6ac50f956c9e2ae-c" alt="Jane" style="width:100%">
+                <div class="container">
+                  <h2>{{fims.title}}</h2>
+                  <p class="title">Director:{{fims.director}}</p>
+                  <p>{{fims.description}}</p>
+                  <p><button  (click)="saveToFavorate(fims)" class="button" [ngClass]="getClasses(fims)" [disabled]="buttonStatus" >Add to Favouirate</button></p>
+                </div>
+              </div>
+            </div>
+      </div>
+  </div>
+</div>
+  
+

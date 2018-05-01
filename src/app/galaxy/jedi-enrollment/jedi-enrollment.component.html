@@ -1,0 +1,101 @@
+<div class="container">
+  
+     <div class="row">
+       <div class="text-center text-white"></div>
+     <div class=" text-center">
+       <button class="btn btn-lg btn-primary "  role="button" data-toggle="modal" data-target="#exampleModal" ><i class="fa fa-play"></i> Enrol now</button>
+       <div  class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           <div class="modal-dialog" role="document">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <div class="modal-body"  >
+                   <form [formGroup]="enrollform" (ngSubmit)="onSubmit()">
+                       <div class="form-group">
+                         <label for="recipient-name" class="col-form-label">Name:</label>
+                         <input type="text" class="form-control" id="recipient-name" formControlName="name" >
+                         <span *ngIf="!enrollform.get('name').valid && enrollform.get('name').touched" class="help-block">Please enter valid user name</span>
+                       </div>
+                       <div class="form-group">
+                         <label for="message-text" class="col-form-label">Email:</label>
+                         <input type="text" class="form-control" id="email-name" formControlName="email" required email>
+                         <span *ngIf="!enrollform.get('email').valid && enrollform.get('email').touched" class="help-block">Please enter valid email id</span>
+                       </div>
+                       <div class="form-group">
+                           <label for="message-text" class="col-form-label">Quote:</label>
+                           <textarea  formControlName="quote" class="form-control" id="quote-text" ></textarea>
+                           <span *ngIf="!enrollform.get('quote').valid && enrollform.get('quote').touched" class="help-block">Please enter a quote</span>
+                         </div>
+                         <div class="form-group" >
+                          
+                             <label for="message-text" class="col-form-label">Picture:</label>
+                               <div class="webcam" >
+                                 <webcam  [trigger]="triggerObservable"   (imageCapture)="handleImage($event)" *ngIf="showWebcam"></webcam>
+                                 <br/>
+                                 <button  class="actionBtn" (click)="triggerSnapshot($event);">Take A Snapshot</button>
+                                 <!-- <button class="actionBtn" (click)="toggleWebcam();">Toggle Webcam</button> -->
+                               </div>
+                               <div class="snapshot"  *ngIf="webcamImage">
+                                  
+                                   <img  [src]="webcamImage.imageAsDataUrl"/>
+                                 </div>
+                           </div>
+                           <div class="modal-footer">
+                               <button type="button" class="btn btn-secondary" #closebtn data-dismiss="modal">Close</button>
+                               <button type="submit" class="btn btn-primary" [disabled]="!enrollform.valid">Save changes</button>
+                             </div>
+                     </form>
+               </div>
+               
+             </div>
+           </div>
+         </div>
+   </div></div></div>
+
+   <!-- <div class="panel">
+       <div class="front card">
+        <h1> Front card </h1>
+       </div>
+           
+       
+       <div class="back card">
+           <h1> Back card </h1>
+       </div>
+       
+     </div> -->
+     <!-- <div id="home" *ngFor="let enrolement of enrollmentData">
+         <h1> {{enrolement.name}}</h1>
+         <img id="isame" src="{{enrolement.image}}" alt="profile-picture">
+        <p>{{enrolement.quote}}</p>
+    
+       </div> -->
+
+
+
+
+       <ul id="messages" *ngFor="let enrolement of enrollmentData">
+               
+               <li>
+                 <div class="infos">
+                   <img src="{{enrolement.image}}" alt="" title="by tresMunkeys" />
+                   <a href="https://twitter.com/webodream" class="sprite twitter">@webodream</a>
+                   <a href="https://www.facebook.com/groups/115089745169149" class="sprite facebook">depot.webdesigner</a>
+                   <a href="https://github.com/arbaoui-mehdi" class="sprite github">@arbaoui-mehdi</a>
+                 </div>
+                 <div class="content">
+                   <h3>
+                       {{enrolement.name}}
+                     <b> {{enrolement.email}}</b>
+                   </h3>
+                   <p>
+                       {{enrolement.quote}}
+                   </p>
+                 </div>
+               </li>
+           
+             </ul>
+      
