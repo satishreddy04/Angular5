@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StarwarsService } from '../service/starwars.service';
 import { DataStorage } from '../service/dataStore.service';
-import {}
 
 @Component({
 	selector: 'app-galaxy',
@@ -10,7 +9,7 @@ import {}
 	styleUrls: ['./galaxy.component.css']
 })
 export class GalaxyComponent implements OnInit {
-	public moviesData=[] 
+	public moviesData = [];
 	constructor(private router: Router, private StarwarsService: StarwarsService, private _data: DataStorage) {}
 	_displayImage(e) {
 		return 'data:image/png;base64,' + e;
